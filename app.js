@@ -8,8 +8,15 @@ const showTemp = document.querySelector(".show-temp");
 btn.addEventListener("click", () => {
     const cityInput = inputCity.value;
     
+    
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric&APPID=${weatherApi}`)
-    .then(res => res.json())
+    .then((response) => {
+        if (!response.ok) {
+          alert("Сity not found.");
+          throw new Error("Сity not found.");
+        }
+        return response.json();
+      })
     .then(data => {
         console.log(data);
 
@@ -26,7 +33,11 @@ btn.addEventListener("click", () => {
                 <div class="humidity">Humidity: ${data.main.humidity}%</div>
                 <div class="wind-speed">Wind speed: ${data.wind.speed}km/h</div>
             </div>
+           
         `;
+
+        
     })
+    
 })
 

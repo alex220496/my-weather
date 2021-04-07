@@ -3,6 +3,9 @@
 }
 body {
     background: url(weather.jpg) center no-repeat;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
 }
 .weather {
     width: 450px;
