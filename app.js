@@ -20,7 +20,7 @@ btn.addEventListener("click", () => {
     .then(data => {
         console.log(data);
 
-        inputCity.value = " ";
+        inputCity.value = "";
 
         showTemp.innerHTML = `
             <div class="name-of-city">Weather in ${data.name}</div>
