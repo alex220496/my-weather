@@ -24,7 +24,7 @@ btn.addEventListener("click", () => {
 
         showTemp.innerHTML = `
             <div class="name-of-city">Weather in ${data.name}</div>
-            <div class="temp-weather">${data.Math.round(main.temp)}°C
+            <div class="temp-weather">${Math.round(data.main.temp)}°C
                     <img class="icon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="">
             </div>
             
